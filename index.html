@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PagantiData and Remove</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <script src="https://kit.fontawesome.com/21315f3230.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="main.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div class="paganti">
+
+    </div>
+
+    <!-- HANDLEBARS -->
+    <script id="paganti-template" type="text/x-handlebars-template">
+      <div class='pagamenti' data-id='{{id}}'>
+        <i class="delete far fa-trash-alt"></i>
+        <h1> {{name}} {{lastname}}</h1>
+        <p> {{price}}</p>
+        <p> ({{status}})</p>
+        <p> {{address}}</p>
+        <p> {{room_number}}</p>
+        <p> {{floor}}</p>
+      </div>
+    </script>
+
+
+  </body>
+</html>
