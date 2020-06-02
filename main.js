@@ -1,6 +1,7 @@
 function init() {
 
   getPaganti();
+  $('.paganti').on('click','.delete', removeElement)
 
 }
 
@@ -26,6 +27,30 @@ function getPaganti() {
 
     }
   })
+}
+
+function removeElement() {
+ var bin = $(this);
+ var container = bin.parent();
+
+ container.fadeOut();
+
+ var id = container.data('id');
+
+$.ajax({
+  url: 'removePaganti.php',
+  method: 'POST',
+  data: {
+    id: id
+  },
+  success: function () {
+
+  },
+  error: function (err) {
+    console.error(err);
+  }
+})
+
 }
 
 $(document).ready(init);

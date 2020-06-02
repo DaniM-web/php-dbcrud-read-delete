@@ -14,14 +14,8 @@ $res = [];
         return;
     }
     $sql = "
-    SELECT paganti.name, paganti.lastname, paganti.address, pagamenti.price, pagamenti.status, stanze.room_number, stanze.floor
-    FROM pagamenti
-    JOIN paganti
-    on paganti.id = pagamenti.pagante_id
-    JOIN prenotazioni
-    on prenotazioni.id = pagamenti.prenotazione_id
-    JOIN stanze
-    on prenotazioni.stanza_id = stanze.id
+    SELECT paganti.id, paganti.name, paganti.lastname, paganti.address
+    FROM paganti
     ";
     $results = $conn -> query($sql);
 
