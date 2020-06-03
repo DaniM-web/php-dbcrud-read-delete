@@ -14,19 +14,22 @@ $res = [];
         return;
     }
     $sql = "
-    SELECT paganti.id, paganti.name, paganti.lastname, paganti.address
+    SELECT id, name, lastname, address
     FROM paganti
     ";
     $results = $conn -> query($sql);
 
-    if ($results -> num_rows < 1) {
-        echo "no result";
-        return;
-    }
-    while ($row = $results -> fetch_assoc()) {
-        $res[] = $row;
-    }
+    if ($results -> num_rows > 0) {
+
+        while ($row = $results -> fetch_assoc()) {
+
+            $res[] = $row;
+        }
+        echo json_encode($res);
+
+      }else {
+        echo json_encode('0 results');
+      }
+
 
     $conn -> close();
-
-    echo json_encode($res);

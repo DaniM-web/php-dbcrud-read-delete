@@ -33,7 +33,7 @@ function removeElement() {
  var bin = $(this);
  var container = bin.parent();
 
- container.fadeOut();
+
 
  var id = container.data('id');
 
@@ -44,7 +44,7 @@ $.ajax({
     id: id
   },
   success: function () {
-
+    container.fadeOut();
   },
   error: function (err) {
     console.error(err);
